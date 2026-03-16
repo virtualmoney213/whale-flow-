@@ -1,23 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {"src": "api/proxy.js", "use": "@vercel/node"},
-    {"src": "index.html", "use": "@vercel/static"}
-  ],
-  "routes": [
-    {"src": "/api/proxy", "dest": "/api/proxy.js"},
-    {"src": "/(.*)", "dest": "/index.html"}
+  "rewrites": [
+    { "source": "/api/proxy", "destination": "/api/proxy.js" }
   ]
 }
-```
-5. Click **"Commit changes"**
-
----
-
-Your repo should then have:
-```
-whale-flow-/
-├── api/proxy.js   ← real proxy code
-├── index.html     ✅
-├── vercel.json    ← add this
-└── README.md      ✅
