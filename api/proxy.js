@@ -46,10 +46,12 @@ export default async function handler(req, res) {
     }
 
     // Make the real request to Unusual Whales
+    // UW-CLIENT-API-ID is required per official docs
     const response = await fetch(url.toString(), {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
+        'UW-CLIENT-API-ID': '100001',
       },
     });
 
